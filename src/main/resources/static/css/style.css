@@ -37,3 +37,7 @@ h2 {
 input.comment {
 	width: 400px;
 }
+
+.error-msg {
+    color: red;
+}
