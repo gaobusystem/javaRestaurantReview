@@ -18,3 +18,17 @@ h2 {
 	padding-top: 6px;
 	padding-bottom: 6px;
 }
+
+/* 通常のボタン */
+.btn {
+	border: 2px solid green;
+	padding: 4px 20px;
+	font-size: 20px;
+	color: green;
+	cursor:pointer;
+}
+
+.btn:hover {
+  color: #fff;
+  background: green;
+}
