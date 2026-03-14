@@ -9,6 +9,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.entity.Review;
 import com.example.demo.form.ReviewRemoveForm;
+import com.example.demo.service.RemoveService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -16,6 +17,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RemoveController {
 
+	private final RemoveService service;
+	
 	/*--- レビュー削除リクエスト（一覧画面より） ---*/
 	@PostMapping("/remove-review")
 	public String removeReview(
@@ -51,10 +54,7 @@ public class RemoveController {
 		r.setRating(form.getRating());
 		r.setComment(form.getComment());
 
-		// 暫定で表示
-		System.out.println("--レビュー削除");
-		System.out.println(r);
-		// 暫定で表示(End)
+		service.remove(r);
 		
 		redirectAttributes.addFlashAttribute("msg", "(レビュー削除)");
 		
