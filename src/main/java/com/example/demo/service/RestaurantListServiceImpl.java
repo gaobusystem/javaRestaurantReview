@@ -17,6 +17,7 @@ public class RestaurantListServiceImpl implements RestaurantListService {
 	
 	@Override
 	public List<Restaurant> findByNameWildcard(String restaurantName) {
+
 		List<Restaurant> list
 			= repository.selectByNameWildcard(restaurantName);
 		
