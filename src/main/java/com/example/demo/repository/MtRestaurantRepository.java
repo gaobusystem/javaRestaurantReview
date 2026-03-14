@@ -12,4 +12,6 @@ public interface MtRestaurantRepository {
 
 	void update(MtRestaurant r);
 
+	void delete(MtRestaurant r);
+
 }
