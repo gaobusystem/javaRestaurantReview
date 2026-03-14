@@ -1,6 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.Review;
+
 public interface RegistService {
 
-	String regist();
+	void regist(Review review);
+	
 }

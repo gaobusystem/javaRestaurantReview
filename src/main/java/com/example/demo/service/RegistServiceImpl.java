@@ -1,12 +1,22 @@
 package com.example.demo.service;
 
-//@Service
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.Review;
+import com.example.demo.repository.RegistRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
 public class RegistServiceImpl implements RegistService {
 
+	private final RegistRepository repository;
+	
 	@Override
-	public String regist() {
-
-		return "レビュー登録が完了しました。";
+	public void regist(Review review) {
+		
+		repository.add(review);
 
 	}
 
