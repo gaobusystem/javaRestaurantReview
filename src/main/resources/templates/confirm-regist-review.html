@@ -9,17 +9,6 @@
 		
 	<h2>レビュー登録確認</h2>
 
-<!--	【店舗】<br>-->
-<!--	<p th:text="${reviewRegistForm.restaurantId}"></p><br><br>-->
-<!--   	【利用者ID】<br>-->
-<!--   	<p th:text="${reviewRegistForm.userId}"></p><br><br>-->
-<!--   	【来店日】<br>-->
-<!--   	<p th:text="${reviewRegistForm.visitDate}"></p><br><br>-->
-<!--   	【評価】(1-5)<br>-->
-<!--   	<p th:text="${reviewRegistForm.rating}"></p><br><br>-->
-<!--   	【一言コメント】<br>-->
-<!--   	<p th:text="${reviewRegistForm.comment}"></p><br><br>-->
-
 	<div th:object="${reviewRegistForm}">
 		【店舗】<br>
 		<p th:text="*{restaurantId}"></p><br><br>
@@ -33,8 +22,25 @@
 	   	<p th:text="*{comment}"></p><br><br>
 	</div>
 
-	<br>
-	<a th:href="@{/show-review-form}">入力画面に戻る</a>
+    <form th:action="@{/confirm-regist-review}" method="POST"
+			th:object="${reviewRegistForm}">
+    	<input type="hidden" th:field="*{restaurantId}">
+    	<input type="hidden" th:field="*{userId}">
+    	<input type="hidden" th:field="*{visitDate}">
+    	<input type="hidden" th:field="*{rating}">
+    	<input type="hidden" th:field="*{comment}">
+    	<input type="submit" value="登録実行" class="btn">
+   	</form>
+
+    <form th:action="@{/show-review-form-ret}" method="POST"
+			th:object="${reviewRegistForm}">
+    	<input type="hidden" th:field="*{restaurantId}">
+    	<input type="hidden" th:field="*{userId}">
+    	<input type="hidden" th:field="*{visitDate}">
+    	<input type="hidden" th:field="*{rating}">
+    	<input type="hidden" th:field="*{comment}" class="btn">
+    	<input type="submit" value="もどる" class="btn">
+   	</form>
 
 </body>
 </html>
