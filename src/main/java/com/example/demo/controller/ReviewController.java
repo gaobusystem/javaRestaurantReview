@@ -9,9 +9,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.ReviewRegistForm;
+import com.example.demo.service.RegistService;
+
+import lombok.RequiredArgsConstructor;
 
 @Controller
+@RequiredArgsConstructor
 public class ReviewController {
+	
+	private final RegistService service;
+
+////	@Autowired
+//	public ReviewController(RegistService service) {
+//		this.service = service;
+//	}
 
 	/*--- レビュー登録画面表示リクエスト ---*/
 	@GetMapping("/show-review-form")
@@ -52,11 +63,11 @@ public class ReviewController {
 			return "regist-review";
 		}
 
-		//
-		// *** ここで from 内容で DB登録処理を行う ***
-		//
-
-		model.addAttribute("msg", "レビュー登録が完了しました。");
+////		RegistService service = new RegistServiceImpl();
+//		RegistService service = new RegistServiceMock();
+		String msg = service.regist();
+		
+		model.addAttribute("msg", msg);
 		
 		return "complete-regist-review";
 	}
