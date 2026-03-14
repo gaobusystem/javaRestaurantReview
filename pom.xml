@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>MaintenanceAjiNavi1</artifactId>
+	<artifactId>MaintenanceAjiNavi2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MaintenanceAjiNavi1</name>
+	<name>MaintenanceAjiNavi2</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -68,6 +68,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- AOP -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<!-- AOP(End) -->
 	</dependencies>
 
 	<build>

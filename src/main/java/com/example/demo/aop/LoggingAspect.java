@@ -13,17 +13,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-	@Before("execution(* com.example.demo.service.*.*(..))")
+    @Before("execution(* com.example.demo.service.*.*(..))")
     public void logBefore(JoinPoint joinPoint) {
         outputLog("メソッド開始", joinPoint);
     }
-    
+
     @AfterReturning("execution(* com.example.demo.service.*.*(..))")
     public void logAfter(JoinPoint joinPoint) {
     	outputLog("メソッド終了", joinPoint);
     }
-    
-    // 共通ログ出力メソッド
+
+    // 共通のログ出力メソッド
     private void outputLog(String str, JoinPoint joinPoint) {
     	// 現在時刻文字列取得
     	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -36,4 +36,5 @@ public class LoggingAspect {
         		strNow + " : " + str + " : " + 
         		className + "." + methodName + "()"		);
     }
+
 }
