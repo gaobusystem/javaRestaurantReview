@@ -73,4 +73,23 @@ public class MtRestaurantRepositoryImpl implements MtRestaurantRepository {
 		return result;
 	}
 
+	@Override
+	public void update(MtRestaurant r) {
+
+		String sql =
+				" UPDATE                  " + 
+				"   m_restaurant          " + 
+				" SET                     " + 
+				"   restaurant_name = ? , " + 
+				"   catch_phrase = ?      " + 
+				" WHERE                   " + 
+				"   restaurant_id = ?     ";
+		
+		jdbcTemplate.update(sql, 
+							r.getRestaurantName(),
+							r.getCatchPhrase(),
+							r.getRestaurantId()		);
+		
+	}
+
 }

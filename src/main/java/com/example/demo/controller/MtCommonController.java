@@ -8,13 +8,13 @@ public class MtCommonController {
 
 	/*--- メニュー画面表示 ---*/
 	@GetMapping("/mt-top")
-	public String mtShowTop() {
+	private String mtShowTop() {
 		return "mt-top";
 	}
 
 	/*--- 完了後のリダイレクト先 ---*/
 	@GetMapping("/mt-complete")
-	public String mtComplete() {
+	private String mtComplete() {
 		return "mt-complete";
 	}
 
