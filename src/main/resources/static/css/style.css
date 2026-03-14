@@ -32,3 +32,8 @@ h2 {
   color: #fff;
   background: green;
 }
+
+/* コメント入力の幅 */
+input.comment {
+	width: 400px;
+}
